@@ -1,14 +1,14 @@
 # roadblock
 
-A simple function for interrupting program flow if a condition isn’t met. Packaged as a [Node.js](https://nodejs.org/) module.
+A simple function for interrupting program flow if a condition isn’t met.
 
 ## Installation
 
 ```bash
-npm install roadblock --save
+npm i roadblock
 ```
 
-## The Function
+## API
 
 The module exposes a single function:
 
@@ -20,7 +20,7 @@ module.exports = function roadblock (shouldBlock, block, main) {
 
 If `shouldBlock` is true, then the `block` function is called and is given `main` as an argument, to be invoked when/if `block` is ready. If `shouldBlock` is false, `block` is bypassed and `main` is called immediately.
 
-## Usage Example
+## Example
 
 ```javascript
 const roadblock = require('roadblock')
@@ -35,7 +35,7 @@ roadblock(!loggedIn, main => {
 
 In the above example, if `loggedIn` is false, the login function is invoked, and is given a callback which it can use once the login is successful. If, on the other hand, `loggedIn` is true, then the login function is bypassed and the main function is called directly.
 
-## The Alternative
+### The Alternative
 
 Without `roadblock`, the code for the previous example would look something like this:
 
