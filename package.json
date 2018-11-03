@@ -20,6 +20,10 @@
   "homepage": "https://github.com/lamansky/roadblock",
   "repository": "lamansky/roadblock",
   "main": "index.js",
+  "files": [],
+  "engines": {
+    "node": ">=4.0.0"
+  },
   "devDependencies": {
     "eslint-config-lamansky": "^1.0.0",
     "mocha": "^5.2.0"

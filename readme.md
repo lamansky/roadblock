@@ -4,6 +4,8 @@ A simple function for interrupting program flow if a condition isn’t met.
 
 ## Installation
 
+Requires [Node.js](https://nodejs.org/) 4.0.0 or above.
+
 ```bash
 npm i roadblock
 ```
@@ -13,9 +15,7 @@ npm i roadblock
 The module exposes a single function:
 
 ```javascript
-module.exports = function roadblock (shouldBlock, block, main) {
-  shouldBlock ? block(main) : main()
-}
+module.exports = (shouldBlock, block, main) => shouldBlock ? block(main) : main()
 ```
 
 If `shouldBlock` is true, then the `block` function is called and is given `main` as an argument, to be invoked when/if `block` is ready. If `shouldBlock` is false, `block` is bypassed and `main` is called immediately.
